@@ -1,3 +1,9 @@
+interface UpdateWithOptions {
+    name?: string;
+    description?: string;
+    price?: number;
+}
+
 export class Product {
     /* public id: string;
     public name: string;
@@ -10,4 +16,10 @@ export class Product {
         public description: string,
         public price: number
     ) { }
+
+    updateWith({ name, description, price }: UpdateWithOptions) {
+        this.name = name || this.name;
+        this.description = description || this.description;
+        this.price = price || this.price;
+    }
 }
